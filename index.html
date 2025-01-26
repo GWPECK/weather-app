@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    
+        <style>
+    body {
+        background-image: url('HOME PAGE BACKGROUND.jpg');
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            
+            <button id="searchBtn">Search</button>
+        
+        </div>
+        <background-image src="HOME PAGE BACKGROUND.jpg">
+        <div id="weatherInfo" class="weather-info">
+            <h2 id="cityName">-</h2>
+            <div id="temperature">-</div>
+            <div id="description">-</div>
+            <div class="details">
+                <div>Humidity: <span id="humidity">-</span>%</div>
+                <div>Wind Speed: <span id="windSpeed">-</span> km/h</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
