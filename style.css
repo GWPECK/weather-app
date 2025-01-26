@@ -3,11 +3,12 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 nav {
-    background-color: #105a49d3;
-    backdrop-filter: blur(10px); 
+    background-color: rgba(16, 90, 73, 0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +17,26 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #bf3939;
+    border-radius: 5px;
 }
 
 .container {
@@ -24,36 +45,29 @@ nav {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
-    width: 300px;
-    margin: 80px auto; /* Adds top margin to account for fixed navbar */
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 16px;
-}
-
-.nav-links a:hover {
-    background-color: #bf3939;
+    width: 90%;
+    max-width: 400px;
+    margin: 80px auto;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 #cityInput {
-    width: 100%;
+    flex-grow: 1;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+#cityInput:focus {
+    outline: none;
+    border-color: #4CAF50;
 }
 
 #searchBtn {
@@ -62,8 +76,12 @@ nav {
     color: white;
     border: none;
     border-radius: 4px;
-    margin-left: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+    background-color: #45a049;
 }
 
 @media (max-width: 768px) {
@@ -74,10 +92,25 @@ nav {
         top: 60px;
         left: 0;
         width: 100%;
-        background-color: #008113;
+        background-color: rgba(0, 129, 19, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links a {
+        padding: 10px 16px;
+        text-align: center;
     }
 
     .nav-links.active {
         display: flex;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #searchBtn {
+        width: 100%;
     }
 }
